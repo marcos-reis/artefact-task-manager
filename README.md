@@ -26,7 +26,7 @@ A Task Management web application built with **Next.js 15 (App Router)**, **tRPC
 
 * **Client-Side Rendering (CSR)**:
   * **Mechanism**: The web server delivers a minimal HTML shell (e.g. `<div id="root"></div>`) and JavaScript bundles. The browser downloads and executes the JavaScript, requests dynamic data asynchronously from backend APIs, and constructs the DOM tree directly on the client.
-  * **Trade-off**: Offloads rendering compute to user devices, but incurs a cold-start waterfall (downloading JS $\rightarrow$ execution $\rightarrow$ API request $\rightarrow$ layout paint), leading to slower First Contentful Paint (FCP) and fragile SEO indexing.
+  * **Trade-off**: Offloads rendering compute to user devices, but incurs a cold-start waterfall (downloading JS -> execution -> API request -> layout paint), leading to slower First Contentful Paint (FCP) and fragile SEO indexing.
 
 * **Server-Side Rendering (SSR)**:
   * **Mechanism**: On **every incoming HTTP request**, the server executes component render logic, fetches required database/API resources, renders the React tree into full HTML, and streams or returns that HTML to the browser. Once rendered, React hydrates the DOM on the client to attach event listeners and interactive state.
