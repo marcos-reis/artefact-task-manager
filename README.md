@@ -151,18 +151,26 @@ export interface Task {
 
 ## Running Locally
 
-### 1. Install Dependencies
+### Option A — Run with Docker Compose (Recommended)
+```bash
+docker compose up --build
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser. To run in detached mode, pass `-d`, and stop with `docker compose down`.
+
+### Option B — Run with Node.js
+
+#### 1. Install Dependencies
 ```bash
 npm install
 ```
 
-### 2. Start Development Server
+#### 2. Start Development Server
 ```bash
 npm run dev
 ```
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### 3. Build for Production
+#### 3. Build for Production
 ```bash
 npm run build
 npm run start
@@ -191,3 +199,4 @@ The test suite (`src/server/api/routers/__tests__/task.test.ts`) verifies:
 1. **Infinite Scroll**: Cursor-based pagination using `IntersectionObserver` on the task list.
 2. **Dedicated Pages**: `/tasks/new` (Creation) and `/tasks/[id]/edit` (Update) routes with deep linking, SSR lookup, and clean 404 boundaries.
 3. **Automated Integration Tests**: Full test suite built with Vitest.
+4. **Containerized Deployment**: Multi-stage `Dockerfile` (Next.js standalone output) and `docker-compose.yml` for one-command execution.
